@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   main:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     env:
       RSPM: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"
       _R_CHECK_CRAN_INCOMING_REMOTE_: false
@@ -73,6 +75,13 @@ jobs:
         run: cd $GITHUB_WORKSPACE/src/c_sharp && sudo dotnet test
       - name: Run tests (R)
         run: cd $GITHUB_WORKSPACE/src/r && R CMD build . && R CMD check --no-manual --as-cran psychrolib*tar.gz
+
+      - name: Publish NPM package
+        run: |
+          cd src/js
+          npm publish --provenance --access public || echo 'This version is already published. Skipping this step!'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   gh-pages:
     runs-on: ubuntu-latest
