@@ -5,8 +5,32 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": [
+    "javascript",
+    "python",
+    "c",
+    "engineering",
+    "csharp",
+    "fortran",
+    "excel",
+    "temperature",
+    "meteorology",
+    "vba",
+    "pressure",
+    "net",
+    "humidity",
+    "hvac",
+    "thermodynamic-properties",
+    "psychrometrics",
+    "relative-humidity",
+    "ashrae",
+    "moist-air",
+    "dew-point-temperature"
+  ],
+  "author": "https://github.com/psychrometrics",
+  "license": "MIT",
+  "description": "📚 Library of psychrometric functions to calculate 🌡️ thermodynamic properties of air for Python, C, C#, Fortran, R, JavaScript and VBA/Excel",
+  "repository": {
+    "url": "https://github.com/psychrometrics/psychrolib"
+  }
 }
