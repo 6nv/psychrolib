@@ -4,10 +4,7 @@ on: [push, pull_request]
 
 jobs:
   main:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on: ubuntu-latest
     env:
       RSPM: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"
       _R_CHECK_CRAN_INCOMING_REMOTE_: false
